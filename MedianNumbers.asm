@@ -58,6 +58,7 @@ rearrange:
 	move $t1, $t2
 	move $t0, $t1
 	move $t3, $t0
+	j compareLess
 
 
 finish:
