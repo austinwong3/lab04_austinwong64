@@ -47,7 +47,7 @@ compareLess:
 
 compareMore:
 	blt $t1, $t2, finish
-	j compareLessF
+	j rearrange
 
 compareLessF:
 	blt $t2, $t1, finish
