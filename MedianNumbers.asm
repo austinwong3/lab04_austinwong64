@@ -50,11 +50,7 @@ compareMore:
 	j compareLessF
 
 compareLessF:
-	blt $t2, $t1, compareMoreF
-	j rearrange
-
-compareMoreF:
-	blt $t1, $t0, finish
+	blt $t2, $t1, finish
 	j rearrange
 
 rearrange:
