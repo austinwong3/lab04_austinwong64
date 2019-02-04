@@ -41,6 +41,15 @@ main:
 	syscall
 	move $t2, $v0
 
+	beq $t0, $t1, finish
+	beq $t2, $t1, finish
+	beq $t2, $t0, qswitch
+	j compareLess
+
+qswitch:
+	move $t1, $t0
+	j finish
+
 compareLess:
 	blt $t0, $t1, compareMore
 	j compareLessF
