@@ -29,8 +29,9 @@ main:
 	syscall
 
 	li $v0, 5
-	move $t0, $v0
 	syscall
+	move $t0, $v0
+	
 
 	li $t1, 1
 
