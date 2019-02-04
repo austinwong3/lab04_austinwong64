@@ -7,9 +7,9 @@
 
 	# TODO: Complete these declarations / initializations
 
-	.asciiz "Enter the next number:\n"
+	prompt: .asciiz "Enter the next number:\n"
 
-	.asciiz "Median: "
+	answer: .asciiz "Median: "
 
 
 #Text Area (i.e. instructions)
@@ -17,9 +17,61 @@
 
 main:
 
-	# TODO: Write your code here
+	li $v0, 4
+	la $a0, prompt
+	syscall
+
+	li	$v0, 5	
+	syscall
+	move $t0, $v0
+
+	li $v0, 4
+	la $a0, prompt
+	syscall
+
+	li	$v0, 5	
+	syscall
+	move $t1, $v0
+
+	li $v0, 4
+	la $a0, prompt
+	syscall
+
+	li	$v0, 5	
+	syscall
+	move $t2, $v0
+
+compareLess:
+	blt $t0, $t1, compareMore
+	j compareLessF
+
+compareMore:
+	blt $t1, $t2, finish
+	j compareLessF
+
+compareLessF:
+	blt $t2, $t1, compareMoreF
+	j rearrange
+
+compareMoreF:
+	blt $t1, $t0, finish
+	j rearrange
+
+rearrange:
+	move $t2, $t3
+	move $t1, $t2
+	move $t0, $t1
+	move $t3, $t0
 
 
+finish:
+	li $v0, 4
+	la $a0, answer
+	syscall
+
+	li $v0, 1
+	move $a0, $t1
+	syscall
 
 exit:
 
