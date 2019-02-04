@@ -54,10 +54,10 @@ compareLessF:
 	j rearrange
 
 rearrange:
-	move $t2, $t3
-	move $t1, $t2
-	move $t0, $t1
-	move $t3, $t0
+	move $t3, $t2
+	move $t2, $t1
+	move $t1, $t0
+	move $t0, $t3
 	j compareLess
 
 
